@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.app.baby.Baby;
 import pl.coderslab.app.baby.BabyRepository;
+import pl.coderslab.app.baby.BabyService;
 import pl.coderslab.app.feeding.Bottle;
 import pl.coderslab.app.feeding.Feeding;
 import pl.coderslab.app.feeding.FeedingRepository;
@@ -21,6 +22,9 @@ public class HomeController {
     BabyRepository babyRepository;
 
     @Autowired
+    BabyService babyService;
+
+    @Autowired
     FeedingRepository feedingRepository;
 
     @RequestMapping("/addBabyTest")
@@ -32,7 +36,7 @@ public class HomeController {
         baby.setWeight(3660);
         baby.setBirthday(LocalDate.now());
 
-        babyRepository.save(baby);
+        babyService.create(baby);
 
         Bottle bottle = new Bottle();
         bottle.setBaby(baby);
@@ -54,7 +58,7 @@ public class HomeController {
     }
 
 
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String home() {
         return "home";
     }
