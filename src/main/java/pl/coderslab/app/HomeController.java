@@ -7,12 +7,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.app.baby.Baby;
 import pl.coderslab.app.baby.BabyRepository;
 import pl.coderslab.app.baby.BabyService;
-import pl.coderslab.app.feeding.Bottle;
-import pl.coderslab.app.feeding.Feeding;
-import pl.coderslab.app.feeding.FeedingRepository;
-import pl.coderslab.app.feeding.Solid;
+import pl.coderslab.app.diaper.Diaper;
+import pl.coderslab.app.diaper.DiaperService;
+import pl.coderslab.app.feeding.*;
+import pl.coderslab.app.nap.Nap;
+import pl.coderslab.app.nap.NapService;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 @Controller
@@ -27,7 +30,17 @@ public class HomeController {
     @Autowired
     FeedingRepository feedingRepository;
 
-    @RequestMapping("/addBabyTest")
+    @Autowired
+    FeedingService feedingService;
+
+    @Autowired
+    NapService napService;
+
+    @Autowired
+    DiaperService diaperService;
+
+
+    @RequestMapping("/addTest")
     @ResponseBody
     public String test(){
         Baby baby = new Baby();
@@ -43,14 +56,47 @@ public class HomeController {
         bottle.setVolume(50);
         bottle.setMilkType("momy");
 
-        feedingRepository.save(bottle);
+        feedingService.create(bottle);
 
         Solid meal = new Solid();
         String[] m = new String[]{"kaszka", "słoiczek"};
         meal.setFoods(m);
 
         feedingRepository.save(meal);
+
         Feeding meal1= feedingRepository.findById(2);
+
+        Nap nap = new Nap();
+        String now = "2016-11-09 10:30:52";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        LocalDateTime formatDateTime = LocalDateTime.parse(now, formatter);
+        nap.setEnd(formatDateTime);
+        nap.setBaby(baby);
+
+        napService.create(nap);
+
+        Diaper diaper = new Diaper();
+        diaper.setContent(new String[]{"pee", "poo"});
+        diaper.setBaby(baby);
+
+        diaperService.create(diaper);
+
+        LeftBreast leftBreast = new LeftBreast();
+        leftBreast.setEnd(formatDateTime);
+
+        feedingService.create(leftBreast);
+
+        RightBreast rightBreast = new RightBreast();
+        rightBreast.setEnd(formatDateTime);
+
+        feedingService.create(rightBreast);
+
+        Pump pump = new Pump();
+        pump.setBreast("Right");
+        pump.setVolume(90);
+
+        feedingService.create(pump);
 
 
         return "Dodano  " + baby.getName() + " " + bottle.getMilkType() + " "
@@ -61,5 +107,10 @@ public class HomeController {
     @RequestMapping("/home")
     public String home() {
         return "home";
+    }
+
+    @RequestMapping("/reports")
+    public String reports() {
+        return "reports";
     }
 }

@@ -19,6 +19,25 @@ public class Feeding {
     @ManyToOne
     private Baby baby;
 
+//    @Column(name="DTYPE", insertable = false, updatable = false)
+//    private String DTYPE;
+//
+//    public String getDTYPE() {
+//        return DTYPE;
+//    }
+
+//    @Column(name="milkType", insertable = false, updatable = false)
+//    private String milkType;
+//
+//    public String getMilkType() {
+//        return milkType;
+//    }
+
+//    @Transient
+//    public String getDecriminatorValue() {
+//        return this.getClass().getAnnotation(DiscriminatorValue.class).value();
+//    }
+
 
     @PrePersist
     public void prePersist() {

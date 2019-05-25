@@ -1,5 +1,7 @@
 package pl.coderslab.app.diaper;
 
+import pl.coderslab.app.baby.Baby;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 @Entity
@@ -11,6 +13,9 @@ public class Diaper {
     private LocalDateTime beginning;
 
     private String[] content;
+
+    @ManyToOne
+    private Baby baby;
 
     @PrePersist
     public void prePersist() {
@@ -39,5 +44,13 @@ public class Diaper {
 
     public void setContent(String[] content) {
         this.content = content;
+    }
+
+    public Baby getBaby() {
+        return baby;
+    }
+
+    public void setBaby(Baby baby) {
+        this.baby = baby;
     }
 }

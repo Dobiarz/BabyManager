@@ -25,6 +25,7 @@
     <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">--%>
     <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>--%>
     <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>--%>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 
     <title>BabyManager</title>
@@ -35,20 +36,46 @@
 
 <div class="container">
 
-    <header>What would you like to log?</header>
+    <header>What report would you like to see?</header>
 
     <div class="card">
         <div class="card-body">
-            <a href="/feeding/list" class="btn btn-primary">Feeding</a>
-            <a href="/nap/list" class="btn btn-primary">Nap</a>
-            <a href="/diaper/list" class="btn btn-primary">Diaper</a>
-            <a href="/books/add" class="btn btn-primary">Measurement</a>
+            <a href="#" class="btn btn-primary">Feeding</a>
+            <a href="#" class="btn btn-primary">Nap</a>
+            <a href="#" class="btn btn-primary">Diaper</a>
+            <a href="#" class="btn btn-primary">Measurement</a>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <canvas id="myChart"></canvas>
         </div>
     </div>
 
 </div>
 
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
 
+        // The data for our dataset
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+</script>
 
 </body>
 </html>

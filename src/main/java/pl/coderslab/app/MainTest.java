@@ -5,6 +5,7 @@ import pl.coderslab.app.baby.Baby;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
@@ -52,7 +53,17 @@ public class MainTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+        String now = "2016-11-09 10:30:52";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        LocalDateTime formatDateTime = LocalDateTime.parse(now, formatter);
+        System.out.println(LocalDateTime.now());
+        System.out.println(formatDateTime);
     }
+
+
 
 
 }
