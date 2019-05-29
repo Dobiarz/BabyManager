@@ -42,7 +42,7 @@ public class HomeController {
 
     @RequestMapping("/addTest")
     @ResponseBody
-    public String test(){
+    public String test() {
         Baby baby = new Baby();
         baby.setName("Ola");
         baby.setHeight(58);
@@ -64,12 +64,14 @@ public class HomeController {
 
         feedingRepository.save(meal);
 
-        Feeding meal1= feedingRepository.findById(2);
+        Long id = 2L;
+
+        Feeding meal1 = feedingService.read(id);
 
         Nap nap = new Nap();
         String now = "2016-11-09 10:30:52";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
+// formater definiuje jaka skłądnie/wygląd ma miec string , którego będzie przerabiał
         LocalDateTime formatDateTime = LocalDateTime.parse(now, formatter);
         nap.setEnd(formatDateTime);
         nap.setBaby(baby);
@@ -100,7 +102,7 @@ public class HomeController {
 
 
         return "Dodano  " + baby.getName() + " " + bottle.getMilkType() + " "
-                + Arrays.toString(meal.getFoods()) +" "+ Arrays.toString(((Solid) meal1).getFoods());
+                + Arrays.toString(meal.getFoods()) + " " + Arrays.toString(((Solid) meal1).getFoods());
     }
 
 

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <html>
 <head>
@@ -28,7 +28,7 @@
 
     <div class="card">
         <div class="card-body">
-            <a href="/books/add" class="btn btn-primary">Add Feeding Left Breast</a>
+            <a href="/feeding/leftBreast/add" class="btn btn-primary">Add Feeding Left Breast</a>
             <a href="/books/add" class="btn btn-primary">Add Feeding Right Breast</a>
             <a href="/books/add" class="btn btn-primary">Add Feeding Bottle</a>
             <a href="/books/add" class="btn btn-primary">Add Feeding Pump</a>
@@ -43,7 +43,7 @@
                     <th>Baby</th>
                     <%--<th>DTYPE</th>--%>
                     <th>Class Name</th>
-                    <th>Begining</th>
+                    <th>Beginning</th>
                     <th>End</th>
                     <th>milkType</th>
                     <th>foods</th>
@@ -54,46 +54,91 @@
                 <c:forEach items="${feedings}" var="feeding">
                     <tr>
                         <td>${feeding.baby.name}</td>
-                        <%--<td>${feeding.DTYPE}</td>--%>
+                            <%--<td>${feeding.DTYPE}</td>--%>
                         <td>${feeding['class'].simpleName}</td>
                         <td>${feeding.beginning.toLocalDate()} ${feeding.beginning.toLocalTime()}</td>
                         <td>
                             <c:choose>
-                                <c:when test="${feeding['class'].simpleName == 'LeftBreast' || feeding['class'].simpleName == 'RihgtBreast'}">
+                                <c:when test="${feeding['class'].simpleName == 'LeftBreast' || feeding['class'].simpleName == 'RightBreast'}">
                                     ${feeding.end.toLocalDate()} ${feeding.end.toLocalTime()}
                                 </c:when>
 
                                 <c:otherwise>
-                                    N/A
+                                    -
                                 </c:otherwise>
                             </c:choose>
-                            <%--<c:if test="${feeding['class'].simpleName == 'LeftBreast' || feeding['class'].simpleName == 'RihgtBreast'}">--%>
+                                <%--<c:if test="${feeding['class'].simpleName == 'LeftBreast' || feeding['class'].simpleName == 'RihgtBreast'}">--%>
                                 <%--${feeding.end.toLocalDate()} ${feeding.end.toLocalTime()}--%>
                                 <%--</c:if>--%>
                         </td>
                         <td>
-                            <c:if test="${feeding['class'].simpleName == 'Bottle'}">
-                                ${feeding.milkType}
-                            </c:if>
+
+                            <c:choose>
+                                <c:when test="${feeding['class'].simpleName == 'Bottle'}">
+                                    ${feeding.milkType}
+                                </c:when>
+
+                                <c:otherwise>
+                                    -
+                                </c:otherwise>
+                            </c:choose>
+
+                                <%--<c:if test="${feeding['class'].simpleName == 'Bottle'}">--%>
+                                <%--${feeding.milkType}--%>
+                                <%--</c:if>--%>
                         </td>
                         <td>
-                            <c:if test="${feeding['class'].simpleName == 'Solid'}">
-                                ${fn:join(feeding.foods,', ')}
-                            </c:if>
+
+                            <c:choose>
+                                <c:when test="${feeding['class'].simpleName == 'Solid'}">
+                                    ${fn:join(feeding.foods,', ')}
+                                </c:when>
+
+                                <c:otherwise>
+                                    -
+                                </c:otherwise>
+                            </c:choose>
+
+                                <%--<c:if test="${feeding['class'].simpleName == 'Solid'}">--%>
+                                <%--${fn:join(feeding.foods,', ')}--%>
+                                <%--</c:if>--%>
                         </td>
                         <td>
-                            <c:if test="${feeding['class'].simpleName == 'Bottle' || feeding['class'].simpleName == 'Pump'}">
-                                ${feeding.volume}
-                            </c:if>
+                            <c:choose>
+                                <c:when test="${feeding['class'].simpleName == 'Bottle' || feeding['class'].simpleName == 'Pump'}">
+                                    ${feeding.volume}
+                                </c:when>
+
+                                <c:otherwise>
+                                    -
+                                </c:otherwise>
+                            </c:choose>
+
+
+                                <%--</c:choose>--%>
+                                <%--<c:if test="${feeding['class'].simpleName == 'Bottle' || feeding['class'].simpleName == 'Pump'}">--%>
+                                <%--${feeding.volume}--%>
+                                <%--</c:if>--%>
                         </td>
                         <td>
-                            <c:if test="${feeding['class'].simpleName == 'Pump'}">
-                                ${feeding.breast}
-                            </c:if>
+
+                            <c:choose>
+                                <c:when test="${feeding['class'].simpleName == 'Pump'}">
+                                    ${feeding.breast}
+                                </c:when>
+
+                                <c:otherwise>
+                                    -
+                                </c:otherwise>
+                            </c:choose>
+
+                            <%--<c:if test="${feeding['class'].simpleName == 'Pump'}">--%>
+                                <%--${feeding.breast}--%>
+                                <%--</c:if>--%>
                         </td>
                         <td>
-                            <%--<a href="/books/update/${book.id}" class="btn btn-success">Edit</a>--%>
-                            <%--<a href="#" onclick="confirmDelete(${book.id}, '${book.title}')" class="btn btn-danger">Delete</a>--%>
+                                <a href="/feeding/${feeding['class'].simpleName}/update/${feeding.id}" class="btn btn-success">Edit</a>
+                                <%--<a href="#" onclick="confirmDelete(${book.id}, '${book.title}')" class="btn btn-danger">Delete</a>--%>
                         </td>
                     </tr>
                 </c:forEach>

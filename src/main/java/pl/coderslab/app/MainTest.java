@@ -2,6 +2,8 @@ package pl.coderslab.app;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pl.coderslab.app.baby.Baby;
+import pl.coderslab.app.feeding.Feeding;
+import pl.coderslab.app.feeding.LeftBreast;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -14,6 +16,26 @@ public class MainTest {
 
     public class Enum {
 
+    }
+
+    public static String switchtest(int day){
+
+//        int dayOfWeek = day;
+        String dayOfWeekString;
+        switch (day) {
+            case 1: dayOfWeekString = "Monday";
+                break;
+            case 2: dayOfWeekString = "Tuesday";
+                break;
+
+            case 3: dayOfWeekString = "Wednesday";
+                break;
+
+            default: dayOfWeekString = "Invalid";
+                break;
+
+        }
+        return dayOfWeekString;
     }
 
     public static void main(String[] args) {
@@ -60,8 +82,23 @@ public class MainTest {
 
         LocalDateTime formatDateTime = LocalDateTime.parse(now, formatter);
         System.out.println(LocalDateTime.now());
+        System.out.println(LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         System.out.println(formatDateTime);
+        System.out.println(formatDateTime.format(DateTimeFormatter.ISO_DATE_TIME));
+
+        System.out.println(switchtest(3));
+
+        Feeding feeding = new Feeding();
+        LeftBreast leftBreast = new LeftBreast();
+        System.out.println(feeding.getClass().getName());
+        System.out.println(feeding.getClass().getSimpleName());
+        System.out.println(leftBreast.getClass().getName());
+        System.out.println(leftBreast.getClass().getSimpleName());
+
+
     }
+
+
 
 
 

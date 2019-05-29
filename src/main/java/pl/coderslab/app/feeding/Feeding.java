@@ -1,5 +1,6 @@
 package pl.coderslab.app.feeding;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.app.baby.Baby;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ public class Feeding {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime beginning;
 
     @ManyToOne
@@ -39,14 +41,10 @@ public class Feeding {
 //    }
 
 
-    @PrePersist
-    public void prePersist() {
-        beginning = LocalDateTime.now();
-    }
-
-    public LocalDateTime getBeginning() {
-        return beginning;
-    }
+//    @PrePersist
+//    public void prePersist() {
+//        beginning = LocalDateTime.now();
+//    }
 
     public Feeding() {
     }
@@ -62,6 +60,10 @@ public class Feeding {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public LocalDateTime getBeginning() {
+        return beginning;
     }
 
     public void setBeginning(LocalDateTime beginning) {

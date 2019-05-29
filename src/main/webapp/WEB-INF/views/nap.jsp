@@ -45,7 +45,7 @@
                 <c:forEach items="${naps}" var="nap">
                     <tr>
                         <td>${nap.beginning.toLocalDate()} ${nap.beginning.toLocalTime()}</td>
-                        <td>${nap.end.toLocalTime()} ${nap.end.toLocalDate()}</td>
+                        <td>${nap.end.toLocalDate()} ${nap.end.toLocalTime()} </td>
                         <td>${nap.baby.name}</td>
                         <td>
                             <%--<a href="/books/update/${book.id}" class="btn btn-success">Edit</a>--%>
