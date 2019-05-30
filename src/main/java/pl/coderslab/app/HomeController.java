@@ -64,9 +64,9 @@ public class HomeController {
 
         feedingRepository.save(meal);
 
-        Long id = 2L;
-
-        Feeding meal1 = feedingService.read(id);
+//        Long id = 2L;
+//
+//        Feeding meal1 = feedingService.read(id);
 
         Nap nap = new Nap();
         String now = "2016-11-09 10:30:52";
@@ -101,8 +101,12 @@ public class HomeController {
         feedingService.create(pump);
 
 
-        return "Dodano  " + baby.getName() + " " + bottle.getMilkType() + " "
-                + Arrays.toString(meal.getFoods()) + " " + Arrays.toString(((Solid) meal1).getFoods());
+        return "Dodano  "
+                + baby.getName() + " "
+                + bottle.getMilkType() + " "
+                + Arrays.toString(meal.getFoods()) + " "
+//                + Arrays.toString(((Solid) meal1).getFoods())
+                ;
     }
 
 

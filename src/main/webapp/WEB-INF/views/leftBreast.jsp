@@ -69,7 +69,7 @@
             <div class="card-body">
 
                 <div class="row">
-                    <div class="form-group">
+                    <div class="form-group col-md-4">
                         <label for="babyId">Baby:</label>
                         <form:select path="baby.id" items="${babies}" itemLabel="name" itemValue="id"
                                      class="form-control" id="babyId"/>

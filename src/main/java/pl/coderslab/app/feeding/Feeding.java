@@ -1,5 +1,6 @@
 package pl.coderslab.app.feeding;
 
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.app.baby.Baby;
 
@@ -41,18 +42,14 @@ public class Feeding {
 //    }
 
 
-//    @PrePersist
-//    public void prePersist() {
-//        beginning = LocalDateTime.now();
-//    }
 
     public Feeding() {
     }
 
-    public Feeding(LocalDateTime startTime, Baby baby) {
-        this.beginning = startTime;
-        this.baby = baby;
-    }
+//    public Feeding(LocalDateTime startTime, Baby baby) {
+//        this.beginning = startTime;
+//        this.baby = baby;
+//    }
 
     public Long getId() {
         return id;
@@ -62,19 +59,19 @@ public class Feeding {
         this.id = id;
     }
 
-    public LocalDateTime getBeginning() {
-        return beginning;
-    }
-
-    public void setBeginning(LocalDateTime beginning) {
-        this.beginning = beginning;
-    }
-
     public Baby getBaby() {
         return baby;
     }
 
     public void setBaby(Baby baby) {
         this.baby = baby;
+    }
+
+    public LocalDateTime getBeginning() {
+        return beginning;
+    }
+
+    public void setBeginning(LocalDateTime beginning) {
+        this.beginning = beginning;
     }
 }

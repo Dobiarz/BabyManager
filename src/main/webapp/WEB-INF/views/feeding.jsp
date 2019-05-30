@@ -29,10 +29,10 @@
     <div class="card">
         <div class="card-body">
             <a href="/feeding/leftBreast/add" class="btn btn-primary">Add Feeding Left Breast</a>
-            <a href="/books/add" class="btn btn-primary">Add Feeding Right Breast</a>
-            <a href="/books/add" class="btn btn-primary">Add Feeding Bottle</a>
-            <a href="/books/add" class="btn btn-primary">Add Feeding Pump</a>
-            <a href="/books/add" class="btn btn-primary">Add Feeding Solid</a>
+            <a href="/feeding/rightBreast/add" class="btn btn-primary">Add Feeding Right Breast</a>
+            <a href="/feeding/bottle/add" class="btn btn-primary">Add Feeding Bottle</a>
+            <a href="/feeding/pump/add" class="btn btn-primary">Add Feeding Pump</a>
+            <a href="/feeding/solid/add" class="btn btn-primary">Add Feeding Solid</a>
         </div>
     </div>
     <div class="card mt-4">
@@ -42,13 +42,13 @@
                 <tr>
                     <th>Baby</th>
                     <%--<th>DTYPE</th>--%>
-                    <th>Class Name</th>
-                    <th>Beginning</th>
+                    <th>Feeding Type</th>
+                    <th>Beginning/Time</th>
                     <th>End</th>
-                    <th>milkType</th>
-                    <th>foods</th>
-                    <th>volume</th>
-                    <th>breast</th>
+                    <th>Milk Type</th>
+                    <th>Foods</th>
+                    <th>Volume</th>
+                    <th>Breast</th>
                     <th style="width: 15%">Actions</th>
                 </tr>
                 <c:forEach items="${feedings}" var="feeding">
@@ -132,13 +132,15 @@
                                 </c:otherwise>
                             </c:choose>
 
-                            <%--<c:if test="${feeding['class'].simpleName == 'Pump'}">--%>
+                                <%--<c:if test="${feeding['class'].simpleName == 'Pump'}">--%>
                                 <%--${feeding.breast}--%>
                                 <%--</c:if>--%>
                         </td>
                         <td>
-                                <a href="/feeding/${feeding['class'].simpleName}/update/${feeding.id}" class="btn btn-success">Edit</a>
-                                <%--<a href="#" onclick="confirmDelete(${book.id}, '${book.title}')" class="btn btn-danger">Delete</a>--%>
+                            <a href="/feeding/${feeding['class'].simpleName}/update/${feeding.id}"
+                               class="btn btn-success">Edit</a>
+                            <a href="#" onclick="confirmDelete(${feeding.id}, '${feeding['class'].simpleName}')"
+                               class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -146,6 +148,13 @@
         </div>
     </div>
 </div>
+<script>
+    function confirmDelete(id, type) {
+        if (confirm("Are you sure you want to delete a feeding \"" + type + "\"?")) {
+            window.location.href = "delete/" + id;
+        }
+    }
+</script>
 
 </body>
 </html>
