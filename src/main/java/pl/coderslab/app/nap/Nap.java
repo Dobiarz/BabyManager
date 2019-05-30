@@ -1,5 +1,6 @@
 package pl.coderslab.app.nap;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.app.baby.Baby;
 
 import javax.persistence.*;
@@ -16,8 +17,10 @@ public class Nap {
     @ManyToOne
     private Baby baby;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime beginning;
-
+    
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime end;
 
     @PrePersist

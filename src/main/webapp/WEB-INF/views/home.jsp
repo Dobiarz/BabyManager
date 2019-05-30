@@ -41,8 +41,8 @@
         <div class="card-body">
             <a href="/feeding/list" class="btn btn-primary">Feeding</a>
             <a href="/nap/list" class="btn btn-primary">Nap</a>
-            <a href="/diaper/list" class="btn btn-primary">Diaper</a>
             <a href="/books/add" class="btn btn-primary">Measurement</a>
+            <a href="/diaper/list" class="btn btn-primary">Diaper</a>
         </div>
     </div>
 

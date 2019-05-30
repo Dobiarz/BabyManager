@@ -27,7 +27,7 @@
 
     <div class="card">
         <div class="card-body">
-            <a href="/books/add" class="btn btn-primary">Add Nap</a>
+            <a href="/nap/add" class="btn btn-primary">Add Nap</a>
 
         </div>
     </div>
@@ -37,19 +37,21 @@
             <table class="table table-hover">
                 <tr>
 
+                    <th>Baby</th>
                     <th>Begining</th>
                     <th>End</th>
-                    <th>Baby Name</th>
                     <th style="width: 15%">Actions</th>
                 </tr>
                 <c:forEach items="${naps}" var="nap">
                     <tr>
+                        <td>${nap.baby.name}</td>
                         <td>${nap.beginning.toLocalDate()} ${nap.beginning.toLocalTime()}</td>
                         <td>${nap.end.toLocalDate()} ${nap.end.toLocalTime()} </td>
-                        <td>${nap.baby.name}</td>
                         <td>
-                            <%--<a href="/books/update/${book.id}" class="btn btn-success">Edit</a>--%>
-                            <%--<a href="#" onclick="confirmDelete(${book.id}, '${book.title}')" class="btn btn-danger">Delete</a>--%>
+                            <a href="/nap/update/${nap.id}"
+                               class="btn btn-success">Edit</a>
+                            <a href="#" onclick="confirmDelete(${nap.id}, '${nap['class'].simpleName}')"
+                               class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -57,6 +59,12 @@
         </div>
     </div>
 </div>
-
+<script>
+    function confirmDelete(id, type) {
+        if (confirm("Are you sure you want to delete a \"" + type + "\"?")) {
+            window.location.href = "delete/" + id;
+        }
+    }
+</script>
 </body>
 </html>
