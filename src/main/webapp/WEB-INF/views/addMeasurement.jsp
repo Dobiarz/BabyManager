@@ -22,13 +22,13 @@
 
 <%@include file="header.jspf" %>
 
-<form:form method="post" modelAttribute="nap">
+<form:form method="post" modelAttribute="measurement">
 
     <div class="container">
-        <header>Add Nap</header>
-        <div class="card bg-success text-white">
+        <header>Add Measurement</header>
+        <div class="card">
             <div class="card-body">
-                <a href="/feeding/list" class="btn btn-primary">Back</a>
+                <a href="/measurement/list" class="btn btn-primary">Back</a>
             </div>
         </div>
         <div class="card mt-4">
@@ -41,41 +41,27 @@
                         <form:errors path="baby.id" element="div" cssClass="error"/>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="beginningId">Beginning:</label>
-                        <form:input path="beginning" class="form-control" id="beginningId" value=""/>
-                        <form:errors path="beginning" element="div" cssClass="error"/>
-                        <button type="button" onclick="setBeginningTime()" class="btn btn-primary">Start</button>
+                        <label for="weightId">Weight(kg):</label>
+                        <form:input type="number" min="0" step="0.010" path="weight" class="form-control" id="weightId" placeholder="0.00"/>
+                        <form:errors path="weight" element="div" cssClass="error"/>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="endId">End:</label>
-                        <form:input path="end" class="form-control" id="endId" value=""/>
-                        <form:errors path="end" element="div" cssClass="error"/>
-                        <button type="button" onclick="setEndTime()" class="btn btn-primary">End</button>
+                        <label for="heightId">Height(cm):</label>
+                        <form:input type="number" min="0" step="1" path="height" class="form-control" id="heightId" placeholder="00"/>
+                        <form:errors path="height" element="div" cssClass="error"/>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="headCircumferenceId">Head Circumference(cm):</label>
+                        <form:input type="number" min="0" step="1" path="headCircumference" class="form-control" id="headCircumferenceId" placeholder="00"/>
+                        <form:errors path="headCircumference" element="div" cssClass="error"/>
                     </div>
                 </div>
-                <input type="submit"  class="btn btn-primary" value="Stop/Save">
+                <input type="submit" class="btn btn-primary" value="Save">
             </div>
         </div>
     </div>
 
 </form:form>
-
-<script>
-    function getCurrentTime() {
-        var currentTime = new Date();
-        currentTime.setHours(currentTime.getHours() + 2);
-        return currentTime;
-    }
-
-    function setBeginningTime() {
-        document.getElementById("beginningId").value = getCurrentTime().toISOString()
-    }
-
-    function setEndTime() {
-        document.getElementById("endId").value = getCurrentTime().toISOString()
-    }
-</script>
-
 
 </body>
 </html>

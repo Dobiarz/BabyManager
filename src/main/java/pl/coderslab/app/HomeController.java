@@ -115,8 +115,8 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping("/reports")
-    public String reports() {
-        return "reports";
-    }
+//    @RequestMapping("/reports")
+//    public String reports() {
+//        return "reports";
+//    }
 }

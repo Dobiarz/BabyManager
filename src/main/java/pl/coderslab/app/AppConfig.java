@@ -5,7 +5,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -37,22 +36,16 @@ import java.util.Properties;
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "pl.coderslab")
 public class AppConfig implements WebMvcConfigurer {
-
+//
 //    @Override
 //    public void addFormatters(FormatterRegistry registry) {
-//        registry.addConverter(getCategoryConverter());
-//        registry.addConverter(getAuthorConverter());
-//    }
-
-
-//    @Bean
-//    public AuthorConverter getAuthorConverter() {
-//        return new AuthorConverter();
+//        registry.addConverter(getStringToDoubleConverter());
 //    }
 //
+//
 //    @Bean
-//    public CategoryConverter getCategoryConverter() {
-//        return new CategoryConverter();
+//    public StringToDoubleConverter getStringToDoubleConverter() {
+//        return new StringToDoubleConverter();
 //    }
 
     @Bean

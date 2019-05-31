@@ -16,12 +16,13 @@ public class Measurement {
     @ManyToOne
     private Baby baby;
 
+    private Double weight;
     private int height;
-    private int weight;
     private int headCircumference;
 
 
     @PrePersist
+    @PreUpdate
     public void prePersist() {
         beginning = LocalDateTime.now();
     }
@@ -58,11 +59,11 @@ public class Measurement {
         this.height = height;
     }
 
-    public int getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
     }
 

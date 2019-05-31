@@ -14,19 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <%--<script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>--%>
-    <%--<script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>--%>
-    <%--<link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">--%>
-    <%--<link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">--%>
-
-    <%--<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"--%>
-    <%--rel="stylesheet">--%>
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
-    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">--%>
-    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>--%>
-    <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>--%>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
 
     <title>BabyManager</title>
 </head>
@@ -68,7 +56,13 @@
                 label: 'My First dataset',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
+                // data: [0, 10, 5, 2, 20, 30, 45]
+                data:
+                    [
+                        <c:forEach items="${intList}" var="element">
+                        ${element.intValue()},
+                        </c:forEach>
+                    ]
             }]
         },
 

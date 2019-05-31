@@ -18,6 +18,7 @@ public class Diaper {
     private Baby baby;
 
     @PrePersist
+    @PreUpdate
     public void prePersist() {
         beginning = LocalDateTime.now();
     }

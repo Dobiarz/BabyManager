@@ -22,13 +22,13 @@
 
 <%@include file="header.jspf" %>
 
-<form:form method="post" modelAttribute="nap">
+<form:form method="post" modelAttribute="diaper">
 
     <div class="container">
-        <header>Add Nap</header>
-        <div class="card bg-success text-white">
+        <header>Add Diaper</header>
+        <div class="card">
             <div class="card-body">
-                <a href="/feeding/list" class="btn btn-primary">Back</a>
+                <a href="/diaper/list" class="btn btn-primary">Back</a>
             </div>
         </div>
         <div class="card mt-4">
@@ -41,41 +41,17 @@
                         <form:errors path="baby.id" element="div" cssClass="error"/>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="beginningId">Beginning:</label>
-                        <form:input path="beginning" class="form-control" id="beginningId" value=""/>
-                        <form:errors path="beginning" element="div" cssClass="error"/>
-                        <button type="button" onclick="setBeginningTime()" class="btn btn-primary">Start</button>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="endId">End:</label>
-                        <form:input path="end" class="form-control" id="endId" value=""/>
-                        <form:errors path="end" element="div" cssClass="error"/>
-                        <button type="button" onclick="setEndTime()" class="btn btn-primary">End</button>
+                        <label for="contentId" >Content:</label>
+                        <form:select items="${content}" path="content" class="form-control" id="contentId" multiple="true"/>
+                        <form:errors path="content" element="div" cssClass="error"/>
                     </div>
                 </div>
-                <input type="submit"  class="btn btn-primary" value="Stop/Save">
+                <input type="submit" class="btn btn-primary" value="Save">
             </div>
         </div>
     </div>
 
 </form:form>
-
-<script>
-    function getCurrentTime() {
-        var currentTime = new Date();
-        currentTime.setHours(currentTime.getHours() + 2);
-        return currentTime;
-    }
-
-    function setBeginningTime() {
-        document.getElementById("beginningId").value = getCurrentTime().toISOString()
-    }
-
-    function setEndTime() {
-        document.getElementById("endId").value = getCurrentTime().toISOString()
-    }
-</script>
-
 
 </body>
 </html>

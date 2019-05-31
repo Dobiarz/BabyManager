@@ -9,7 +9,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
 <head>
 
@@ -24,11 +23,11 @@
 
 <div class="container">
 
-    <header>Diaper</header>
+    <header>Measurement</header>
 
     <div class="card">
         <div class="card-body">
-            <a href="/diaper/add" class="btn btn-primary">Add Diaper</a>
+            <a href="/measurement/add" class="btn btn-primary">Add Measurement</a>
 
         </div>
     </div>
@@ -38,20 +37,24 @@
             <table class="table table-hover">
                 <tr>
 
-                    <th>Baby Name</th>
-                    <th>Beginning</th>
-                    <th>Content</th>
+                    <th>Baby</th>
+                    <th>Begining</th>
+                    <th>Weight(kg)</th>
+                    <th>Height(cm)</th>
+                    <th>Head Circumference(cm)</th>
                     <th style="width: 15%">Actions</th>
                 </tr>
-                <c:forEach items="${diapers}" var="diaper">
+                <c:forEach items="${measurements}" var="measurement">
                     <tr>
-                        <td>${diaper.baby.name}</td>
-                        <td>${diaper.beginning.toLocalDate()} ${diaper.beginning.toLocalTime()}</td>
-                        <td>${fn:join(diaper.content,', ')}</td>
+                        <td>${measurement.baby.name}</td>
+                        <td>${measurement.beginning.toLocalDate()} ${measurement.beginning.toLocalTime()}</td>
+                        <td>${measurement.weight}</td>
+                        <td>${measurement.height}</td>
+                        <td>${measurement.headCircumference}</td>
                         <td>
-                            <a href="/diaper/update/${diaper.id}"
+                            <a href="/measurement/update/${measurement.id}"
                                class="btn btn-success">Edit</a>
-                            <a href="#" onclick="confirmDelete(${diaper.id}, '${diaper['class'].simpleName}')"
+                            <a href="#" onclick="confirmDelete(${measurement.id}, '${measurement['class'].simpleName}')"
                                class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
