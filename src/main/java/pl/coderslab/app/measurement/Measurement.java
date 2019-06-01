@@ -1,5 +1,6 @@
 package pl.coderslab.app.measurement;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.app.baby.Baby;
 
 import javax.persistence.*;
@@ -11,6 +12,8 @@ public class Measurement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime beginning;
 
     @ManyToOne
@@ -22,7 +25,7 @@ public class Measurement {
 
 
     @PrePersist
-    @PreUpdate
+//    @PreUpdate
     public void prePersist() {
         beginning = LocalDateTime.now();
     }

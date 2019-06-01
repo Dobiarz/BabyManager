@@ -42,6 +42,13 @@
                         <form:errors path="baby.id" element="div" cssClass="error"/>
                     </div>
                     <div class="form-group col-md-4">
+
+                        <label for="beginningId">Beginning:</label>
+                        <form:input path="beginning" class="form-control" id="beginningId" placeholder="dd.MM.yyyy HH:mm:ss"/>
+                        <form:errors path="beginning" element="div" cssClass="error"/>
+
+                    </div>
+                    <div class="form-group col-md-4">
                         <label for="volumeId">Volume(ml):</label>
                         <form:input type="number" min="0" step="5" path="volume" class="form-control" id="volumeId" />
                         <form:errors path="volume" element="div" cssClass="error"/>
@@ -58,23 +65,6 @@
     </div>
 
 </form:form>
-
-<script>
-    function getCurrentTime() {
-        var currentTime = new Date();
-        currentTime.setHours(currentTime.getHours() + 2);
-        return currentTime;
-    }
-
-    function setBeginningTime() {
-        document.getElementById("beginningId").value = getCurrentTime().toISOString()
-    }
-
-    function setEndTime() {
-        document.getElementById("endId").value = getCurrentTime().toISOString()
-    }
-</script>
-
 
 </body>
 </html>

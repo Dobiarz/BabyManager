@@ -14,10 +14,11 @@ public class Solid extends Feeding {
     private String[] foods;
 
     @PrePersist
-    @PreUpdate
+//    @PreUpdate
     public void prePersist() {
         super.setBeginning(LocalDateTime.now());
     }
+
     public String[] getFoods() {
         return foods;
     }

@@ -66,13 +66,13 @@ public class DiaperController {
     public String updateDiaperForm(@PathVariable Long id, Model model) {
         Diaper diaper = diaperService.read(id);
         model.addAttribute("diaper", diaper);
-        return "addDiaper";
+        return "updateDiaper";
     }
 
     @PostMapping("update/{id}")
     public String updateDiaperFromForm(@ModelAttribute @Valid Diaper diaper, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "addDiaper";
+            return "updateDiaper";
         }
         diaperService.update(diaper);
         return "redirect:../list";

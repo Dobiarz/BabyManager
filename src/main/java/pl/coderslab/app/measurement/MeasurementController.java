@@ -54,13 +54,13 @@ public class MeasurementController {
     public String updateMeasurementForm(@PathVariable Long id, Model model) {
         Measurement measurement = measurementService.read(id);
         model.addAttribute("measurement", measurement);
-        return "addMeasurement";
+        return "updateMeasurement";
     }
 
     @PostMapping("update/{id}")
     public String updateMeasurementFromForm(@ModelAttribute @Valid Measurement measurement, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "addMeasurement";
+            return "updateMeasurement";
         }
         measurementService.update(measurement);
         return "redirect:../list";

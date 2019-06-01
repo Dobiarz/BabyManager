@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>BabyManager</title>
 </head>
@@ -156,24 +157,60 @@
 <script>
     function getCurrentTime() {
         var currentTime = new Date();
-        currentTime.setHours(currentTime.getHours() + 2);
+        // currentTime.setHours(currentTime.getHours() + 2);
         // ISO Format
         // 2019-05-25T12:02:10.81
-        // document.getElementById("beginningId").value = date.toISOString();
+        // "dd.MM.yyyy HH:mm:ss"
+        if(currentTime.getMonth() < 10){
+            var month = currentTime.getMonth() + 1;
+            month = "0" + month;
+        }else {
+            month = currentTime.getMonth() + 1
+        }
+
+        if(currentTime.getDate() < 10){
+            var dayOfMonth = "0" + currentTime.getDate();
+        }else {
+            dayOfMonth = currentTime.getDate();
+        }
+
+        if(currentTime.getHours() < 10){
+            var hour = "0" + currentTime.getHours();
+        }else {
+            hour = currentTime.getHours();
+        }
+        if(currentTime.getMinutes() < 10){
+            var minute = "0" + currentTime.getMinutes();
+        }else {
+            minute = currentTime.getMinutes();
+        }
+        if(currentTime.getSeconds() < 10){
+            var second = "0" + currentTime.getSeconds();
+        }else {
+            second = currentTime.getSeconds();
+        }
+        var currentTimeString =
+            currentTime.getFullYear() + "-"
+            + month + "-"
+            + dayOfMonth + " "
+            + hour + ":"
+            + minute + ":"
+            + second;
+
         //     date.getFullYear() + "-"
         //     + date.getMonth() + "-"
-        //     + date.getDate() + "T"
+        //     + date.getDate() + " "
         //     + date.getHours() + ":"
         //     + date.getMinutes() + ":"
         //     + date.getSeconds();
-        return currentTime;
+        return currentTimeString;
     }
 
     function setBeginningTime(){
-        document.getElementById("beginningId").value = getCurrentTime().toISOString()
+        document.getElementById("beginningId").value = getCurrentTime()
     }
     function setEndTime(){
-        document.getElementById("endId").value = getCurrentTime().toISOString()
+        document.getElementById("endId").value = getCurrentTime()
     }
 </script>
 

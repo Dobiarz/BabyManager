@@ -1,24 +1,27 @@
 package pl.coderslab.app.diaper;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.app.baby.Baby;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
 @Entity
 public class Diaper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    //    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    //    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime beginning;
-
     private String[] content;
 
     @ManyToOne
     private Baby baby;
 
     @PrePersist
-    @PreUpdate
+//    @PreUpdate
     public void prePersist() {
         beginning = LocalDateTime.now();
     }

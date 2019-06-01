@@ -23,13 +23,13 @@
 
 <%@include file="header.jspf" %>
 
-<form:form method="post" modelAttribute="pump">
+<form:form method="post" modelAttribute="diaper">
 
     <div class="container">
-        <header>Add Pump</header>
+        <header>Add Diaper</header>
         <div class="card">
             <div class="card-body">
-                <a href="/feeding/list" class="btn btn-primary">Back</a>
+                <a href="/diaper/list" class="btn btn-primary">Back</a>
             </div>
         </div>
         <div class="card mt-4">
@@ -42,39 +42,24 @@
                         <form:errors path="baby.id" element="div" cssClass="error"/>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="volumeId">Volume(ml):</label>
-                        <form:input type="number" min="0" step="5" path="volume" class="form-control" id="volumeId" />
-                        <form:errors path="volume" element="div" cssClass="error"/>
+
+                        <label for="beginningId">Beginning:</label>
+                        <form:input path="beginning" class="form-control" id="beginningId" placeholder="dd.MM.yyyy HH:mm:ss"/>
+                        <form:errors path="beginning" element="div" cssClass="error"/>
+
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="breastId" >Breast:</label>
-                        <form:select items="${breasts}" path="breast" class="form-control" id="breastId"/>
-                        <form:errors path="breast" element="div" cssClass="error"/>
+                        <label for="contentId" >Content:</label>
+                        <form:select items="${content}" path="content" class="form-control" id="contentId" multiple="true"/>
+                        <form:errors path="content" element="div" cssClass="error"/>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Stop/Save">
+                <input type="submit" class="btn btn-primary" value="Save">
             </div>
         </div>
     </div>
 
 </form:form>
-
-<script>
-    function getCurrentTime() {
-        var currentTime = new Date();
-        currentTime.setHours(currentTime.getHours() + 2);
-        return currentTime;
-    }
-
-    function setBeginningTime() {
-        document.getElementById("beginningId").value = getCurrentTime().toISOString()
-    }
-
-    function setEndTime() {
-        document.getElementById("endId").value = getCurrentTime().toISOString()
-    }
-</script>
-
 
 </body>
 </html>

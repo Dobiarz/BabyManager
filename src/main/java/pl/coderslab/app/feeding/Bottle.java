@@ -14,7 +14,7 @@ public class Bottle extends Feeding {
     private String milkType;
 
     @PrePersist
-    @PreUpdate
+//    @PreUpdate
     public void prePersist() {
         super.setBeginning(LocalDateTime.now());
     }

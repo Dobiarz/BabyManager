@@ -43,6 +43,14 @@
                         <form:errors path="baby.id" element="div" cssClass="error"/>
                     </div>
                     <div class="form-group col-md-4">
+
+                        <label for="beginningId">Beginning:</label>
+                        <form:input path="beginning" class="form-control" id="beginningId"
+                                    placeholder="dd.MM.yyyy HH:mm:ss"/>
+                        <form:errors path="beginning" element="div" cssClass="error"/>
+
+                    </div>
+                    <div class="form-group col-md-4">
                         <label for="weightId">Weight(kg):</label>
                         <form:input type="number" min="0" step="0.010" path="weight" class="form-control" id="weightId" placeholder="0.00"/>
                         <form:errors path="weight" element="div" cssClass="error"/>

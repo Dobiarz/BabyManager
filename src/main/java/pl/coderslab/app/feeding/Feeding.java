@@ -16,8 +16,11 @@ public class Feeding {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    //    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+//    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime beginning;
+
 
     @ManyToOne
     private Baby baby;
@@ -40,7 +43,6 @@ public class Feeding {
 //    public String getDecriminatorValue() {
 //        return this.getClass().getAnnotation(DiscriminatorValue.class).value();
 //    }
-
 
 
     public Feeding() {

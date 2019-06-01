@@ -155,13 +155,13 @@ public class FeedingController {
     public String updateBottleForm(@PathVariable Long id, Model model) {
         Bottle bottle = (Bottle) feedingService.read(id);
         model.addAttribute("bottle", bottle);
-        return "bottle";
+        return "updateBottle";
     }
 
     @PostMapping("Bottle/update/{id}")
     public String updateBottleFromForm(@ModelAttribute @Valid Bottle bottle, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "bottle";
+            return "updateBottle";
         }
         feedingService.update(bottle);
         return "redirect:../../list";
@@ -187,13 +187,13 @@ public class FeedingController {
     public String updatePumpForm(@PathVariable Long id, Model model) {
         Pump pump = (Pump) feedingService.read(id);
         model.addAttribute("pump", pump);
-        return "pump";
+        return "updatePump";
     }
 
     @PostMapping("Pump/update/{id}")
     public String updatePumpFromForm(@ModelAttribute @Valid Pump pump, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "pump";
+            return "updatePump";
         }
         feedingService.update(pump);
         return "redirect:../../list";
@@ -219,13 +219,13 @@ public class FeedingController {
     public String updateSolidForm(@PathVariable Long id, Model model) {
         Solid solid = (Solid) feedingService.read(id);
         model.addAttribute("solid", solid);
-        return "solid";
+        return "updateSolid";
     }
 
     @PostMapping("Solid/update/{id}")
     public String updateSolidFromForm(@ModelAttribute @Valid Solid solid, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "solid";
+            return "updateSolid";
         }
         feedingService.update(solid);
         return "redirect:../../list";

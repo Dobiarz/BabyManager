@@ -12,15 +12,17 @@
 
 <html>
 <head>
-
+    <%--<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">--%>
+    <%--<link rel="stylesheet" href="webjars/font-awesome/4.7.0/css/font-awesome.min.css">--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BabyManager</title>
 </head>
 <body>
 
 <%@include file="header.jspf" %>
+
 
 <div class="container">
 
@@ -138,7 +140,7 @@
                         </td>
                         <td>
                             <a href="/feeding/${feeding['class'].simpleName}/update/${feeding.id}"
-                               class="btn btn-success">Edit</a>
+                               class="btn btn-success"><i class="fa fa-cog"></i> Edit</a>
                             <a href="#" onclick="confirmDelete(${feeding.id}, '${feeding['class'].simpleName}')"
                                class="btn btn-danger">Delete</a>
                         </td>
