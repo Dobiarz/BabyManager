@@ -10,8 +10,7 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="/home">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/reports">Reports </a>
-            <a class="nav-item nav-link" href="#">Profile</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+            <a class="nav-item nav-link" href="/baby/list">Babies</a>
         </div>
     </div>
 </nav>

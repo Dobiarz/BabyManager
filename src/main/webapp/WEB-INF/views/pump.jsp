@@ -52,7 +52,7 @@
                         <form:errors path="breast" element="div" cssClass="error"/>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Stop/Save">
+                <input type="submit" class="btn btn-primary" value="Save">
             </div>
         </div>
     </div>

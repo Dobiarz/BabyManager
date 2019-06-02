@@ -140,9 +140,9 @@
                         </td>
                         <td>
                             <a href="/feeding/${feeding['class'].simpleName}/update/${feeding.id}"
-                               class="btn btn-success"><i class="fa fa-cog"></i> Edit</a>
+                               class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                             <a href="#" onclick="confirmDelete(${feeding.id}, '${feeding['class'].simpleName}')"
-                               class="btn btn-danger">Delete</a>
+                               class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 </c:forEach>

@@ -28,4 +28,8 @@ public class MeasurementService {
     public List<Measurement> findAll() {
         return measurementRepository.findAll();
     }
+
+    public  Measurement findFirstByBabyIdOrderByBeginningDesc(Long id){
+        return  measurementRepository.findFirstByBabyIdOrderByBeginningDescQuery(id);
+    };
 }

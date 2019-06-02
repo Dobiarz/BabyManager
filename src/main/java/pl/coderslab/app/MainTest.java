@@ -60,8 +60,8 @@ public class MainTest {
         Baby baby = new Baby();
         baby.setName("Ola");
         baby.setHeight(58);
-        baby.setWeight(3660);
-        baby.setBirthday(LocalDate.now());
+        baby.setWeight(3.660);
+        baby.setBirthDate(LocalDate.now());
 
         try {
             String josonstring = mapper.writeValueAsString(arr);

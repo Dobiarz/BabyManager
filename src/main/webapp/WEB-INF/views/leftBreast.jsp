@@ -144,7 +144,7 @@
                     <%--</div>--%>
                     <%--</div>--%>
 
-                <input type="submit" class="btn btn-primary" value="Stop/Save">
+                <input type="submit" class="btn btn-primary" value="Save">
 
             </div>
 

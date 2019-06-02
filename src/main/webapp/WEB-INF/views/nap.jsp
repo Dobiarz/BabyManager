@@ -50,9 +50,9 @@
                         <td>${nap.end.toLocalDate()} ${nap.end.toLocalTime()} </td>
                         <td>
                             <a href="/nap/update/${nap.id}"
-                               class="btn btn-success">Edit</a>
+                               class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                             <a href="#" onclick="confirmDelete(${nap.id}, '${nap['class'].simpleName}')"
-                               class="btn btn-danger">Delete</a>
+                               class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 </c:forEach>

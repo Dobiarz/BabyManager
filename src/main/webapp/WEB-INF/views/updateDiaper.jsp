@@ -44,7 +44,7 @@
                     <div class="form-group col-md-4">
 
                         <label for="beginningId">Beginning:</label>
-                        <form:input path="beginning" class="form-control" id="beginningId" placeholder="dd.MM.yyyy HH:mm:ss"/>
+                        <form:input path="beginning" class="form-control" id="beginningId" placeholder="yyyy-MM-dd HH:mm:ss"/>
                         <form:errors path="beginning" element="div" cssClass="error"/>
 
                     </div>

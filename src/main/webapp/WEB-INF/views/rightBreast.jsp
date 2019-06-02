@@ -54,7 +54,7 @@
                         <button type="button" onclick="setEndTime()" class="btn btn-primary">End</button>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Stop/Save">
+                <input type="submit" class="btn btn-primary" value="Save">
             </div>
         </div>
     </div>

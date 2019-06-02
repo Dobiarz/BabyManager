@@ -55,9 +55,9 @@
                         <td>${measurement.headCircumference}</td>
                         <td>
                             <a href="/measurement/update/${measurement.id}"
-                               class="btn btn-success">Edit</a>
+                               class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                             <a href="#" onclick="confirmDelete(${measurement.id}, '${measurement['class'].simpleName}')"
-                               class="btn btn-danger">Delete</a>
+                               class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 </c:forEach>

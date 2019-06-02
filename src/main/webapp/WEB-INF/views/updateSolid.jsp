@@ -45,7 +45,7 @@
 
                         <label for="beginningId">Beginning:</label>
                         <form:input path="beginning" class="form-control" id="beginningId"
-                                    placeholder="dd.MM.yyyy HH:mm:ss"/>
+                                    placeholder="yyyy-MM-dd HH:mm:ss"/>
                         <form:errors path="beginning" element="div" cssClass="error"/>
 
                     </div>
@@ -56,7 +56,7 @@
                         <form:errors path="foods" element="div" cssClass="error"/>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary" value="Stop/Save">
+                <input type="submit" class="btn btn-primary" value="Save">
             </div>
         </div>
     </div>

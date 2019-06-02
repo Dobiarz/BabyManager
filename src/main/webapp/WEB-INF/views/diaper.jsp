@@ -51,9 +51,9 @@
                         <td>${fn:join(diaper.content,', ')}</td>
                         <td>
                             <a href="/diaper/update/${diaper.id}"
-                               class="btn btn-success">Edit</a>
+                               class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                             <a href="#" onclick="confirmDelete(${diaper.id}, '${diaper['class'].simpleName}')"
-                               class="btn btn-danger">Delete</a>
+                               class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 </c:forEach>
