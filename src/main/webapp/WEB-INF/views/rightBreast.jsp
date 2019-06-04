@@ -39,18 +39,18 @@
                         <label for="babyId">Baby:</label>
                         <form:select path="baby.id" items="${babies}" itemLabel="name" itemValue="id"
                                      class="form-control" id="babyId"/>
-                        <form:errors path="baby.id" element="div" cssClass="error"/>
+                        <form:errors path="baby" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="beginningId">Beginning:</label>
                         <form:input path="beginning" class="form-control" id="beginningId" value=""/>
-                        <form:errors path="beginning" element="div" cssClass="error"/>
+                        <form:errors path="beginning" element="div" cssClass="text-danger"/>
                         <button type="button" onclick="setBeginningTime()" class="btn btn-primary">Start</button>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="endId">End:</label>
                         <form:input path="end" class="form-control" id="endId" value=""/>
-                        <form:errors path="end" element="div" cssClass="error"/>
+                        <form:errors path="end" element="div" cssClass="text-danger"/>
                         <button type="button" onclick="setEndTime()" class="btn btn-primary">End</button>
                     </div>
                 </div>

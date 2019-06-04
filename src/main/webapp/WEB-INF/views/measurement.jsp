@@ -40,7 +40,7 @@
                 <tr>
 
                     <th>Baby</th>
-                    <th>Begining</th>
+                    <th>Time</th>
                     <th>Weight(kg)</th>
                     <th>Height(cm)</th>
                     <th>Head Circumference(cm)</th>

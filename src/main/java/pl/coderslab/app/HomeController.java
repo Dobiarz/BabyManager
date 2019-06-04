@@ -100,14 +100,25 @@ public class HomeController {
 
         feedingService.create(pump);
 
-
+        Baby uniquebaby = babyRepository.findFirstByName("Ada");
         return "Dodano  "
                 + baby.getName() + " "
                 + bottle.getMilkType() + " "
                 + Arrays.toString(meal.getFoods()) + " "
+                + "Znaleziono:" + uniquebaby.getName()
 //                + Arrays.toString(((Solid) meal1).getFoods())
                 ;
     }
+
+    @RequestMapping("/uniqueTest")
+    @ResponseBody
+    public String uniquetest() {
+        Baby uniquebaby = babyRepository.findFirstByName("Ada");
+        boolean isNameAlreadyInUse = babyService.isNameAlreadyInUse("Ada");
+        return  "Znaleziono Baby:" + uniquebaby + "\n"
+                + "IsNamealreadyInUse: " + isNameAlreadyInUse ;
+    }
+
 
 
     @RequestMapping("/home")

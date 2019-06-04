@@ -51,4 +51,14 @@ public class BabyService {
     public List<Baby> findAll() {
         return babyRepository.findAll();
     }
+
+    public boolean isNameAlreadyInUse(String name) {
+        boolean babyInDataBase = true;
+
+        if (babyRepository.findFirstByName(name) == null) {
+            babyInDataBase = false;
+        }
+
+        return babyInDataBase;
+    }
 }

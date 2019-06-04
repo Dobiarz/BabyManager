@@ -39,21 +39,21 @@
                         <label for="babyId">Baby:</label>
                         <form:select path="baby.id" items="${babies}" itemLabel="name" itemValue="id"
                                      class="form-control" id="babyId"/>
-                        <form:errors path="baby.id" element="div" cssClass="error"/>
+                        <form:errors path="baby" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
 
                         <label for="beginningId">Beginning:</label>
                         <form:input path="beginning" class="form-control" id="beginningId"
                                     placeholder="yyyy-MM-dd HH:mm:ss"/>
-                        <form:errors path="beginning" element="div" cssClass="error"/>
+                        <form:errors path="beginning" element="div" cssClass="text-danger"/>
 
                     </div>
                     <div class="form-group col-md-4">
                         <label for="foodsId">Food:</label>
                         <form:select items="${solidFoods}" path="foods" class="form-control" id="foodsId"
                                      multiple="true"/>
-                        <form:errors path="foods" element="div" cssClass="error"/>
+                        <form:errors path="foods" element="div" cssClass="text-danger"/>
                     </div>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Save">

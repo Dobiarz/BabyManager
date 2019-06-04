@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.app.baby.Baby;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 @Entity
 @Table(name="Measurements")
@@ -16,6 +17,7 @@ public class Measurement {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime beginning;
 
+    @NotNull(message = "May not be null. Add Baby first")
     @ManyToOne
     private Baby baby;
 

@@ -39,17 +39,17 @@
                         <label for="babyId">Baby:</label>
                         <form:select path="baby.id" items="${babies}" itemLabel="name" itemValue="id"
                                      class="form-control" id="babyId"/>
-                        <form:errors path="baby.id" element="div" cssClass="error"/>
+                        <form:errors path="baby" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="volumeId">Volume(ml):</label>
                         <form:input type="number" min="0" step="5" path="volume" class="form-control" id="volumeId" />
-                        <form:errors path="volume" element="div" cssClass="error"/>
+                        <form:errors path="volume" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="milkTypeId" >Milk Type:</label>
                         <form:select items="${milkTypes}" path="milkType" class="form-control" id="milkTypeId"/>
-                        <form:errors path="milkType" element="div" cssClass="error"/>
+                        <form:errors path="milkType" element="div" cssClass="text-danger"/>
                     </div>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Save">

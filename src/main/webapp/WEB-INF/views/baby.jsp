@@ -39,8 +39,8 @@
             <table class="table table-hover">
                 <tr>
 
-                    <th>Baby Name</th>
-                    <th>DoB</th>
+                    <th>Baby</th>
+                    <th>Birthdate</th>
                     <th>Weight(kg)</th>
                     <th>Height(cm)</th>
                     <th>Head Circumference(cm)</th>

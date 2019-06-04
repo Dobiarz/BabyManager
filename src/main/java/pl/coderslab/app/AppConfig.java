@@ -1,8 +1,10 @@
 package pl.coderslab.app;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -47,6 +49,14 @@ public class AppConfig implements WebMvcConfigurer {
 //    public StringToDoubleConverter getStringToDoubleConverter() {
 //        return new StringToDoubleConverter();
 //    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ReloadableResourceBundleMessageSource bean = new ReloadableResourceBundleMessageSource();
+        bean.setBasename("classpath:messages");
+        bean.setDefaultEncoding("UTF-8");
+        return bean;
+    }
 
     @Bean
     public ViewResolver internalResourceViewResolver() {

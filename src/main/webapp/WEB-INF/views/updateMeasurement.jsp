@@ -40,30 +40,30 @@
                         <label for="babyId">Baby:</label>
                         <form:select path="baby.id" items="${babies}" itemLabel="name" itemValue="id"
                                      class="form-control" id="babyId"/>
-                        <form:errors path="baby.id" element="div" cssClass="error"/>
+                        <form:errors path="baby" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
 
                         <label for="beginningId">Beginning:</label>
                         <form:input path="beginning" class="form-control" id="beginningId"
                                     placeholder="yyyy-MM-dd HH:mm:ss"/>
-                        <form:errors path="beginning" element="div" cssClass="error"/>
+                        <form:errors path="beginning" element="div" cssClass="text-danger"/>
 
                     </div>
                     <div class="form-group col-md-4">
                         <label for="weightId">Weight(kg):</label>
                         <form:input type="number" min="0" step="0.010" path="weight" class="form-control" id="weightId" placeholder="0.00"/>
-                        <form:errors path="weight" element="div" cssClass="error"/>
+                        <form:errors path="weight" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="heightId">Height(cm):</label>
                         <form:input type="number" min="0" step="1" path="height" class="form-control" id="heightId" placeholder="00"/>
-                        <form:errors path="height" element="div" cssClass="error"/>
+                        <form:errors path="height" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="headCircumferenceId">Head Circumference(cm):</label>
                         <form:input type="number" min="0" step="1" path="headCircumference" class="form-control" id="headCircumferenceId" placeholder="00"/>
-                        <form:errors path="headCircumference" element="div" cssClass="error"/>
+                        <form:errors path="headCircumference" element="div" cssClass="text-danger"/>
                     </div>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Save">

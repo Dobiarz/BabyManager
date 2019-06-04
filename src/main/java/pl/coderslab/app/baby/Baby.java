@@ -1,8 +1,10 @@
 package pl.coderslab.app.baby;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -14,8 +16,11 @@ public class Baby {
     private Long id;
     @Column(nullable = false, updatable = false)
     private LocalDateTime created;
+    @NotBlank
+    @UniqueName
     private String name;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull
     private LocalDate birthDate;
     private String gender;
     @Transient

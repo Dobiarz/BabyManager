@@ -40,12 +40,12 @@
                         <label for="babyId">Baby:</label>
                         <form:select path="baby.id" items="${babies}" itemLabel="name" itemValue="id"
                                      class="form-control" id="babyId"/>
-                        <form:errors path="baby.id" element="div" cssClass="error"/>
+                        <form:errors path="baby" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="contentId" >Content:</label>
                         <form:select items="${content}" path="content" class="form-control" id="contentId" multiple="true"/>
-                        <form:errors path="content" element="div" cssClass="error"/>
+                        <form:errors path="content" element="div" cssClass="text-danger"/>
                     </div>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Save">

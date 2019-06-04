@@ -40,7 +40,7 @@
                 <tr>
 
                     <th>Baby Name</th>
-                    <th>Beginning</th>
+                    <th>Time</th>
                     <th>Content</th>
                     <th style="width: 15%">Actions</th>
                 </tr>
