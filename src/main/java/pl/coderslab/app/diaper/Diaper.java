@@ -1,5 +1,6 @@
 package pl.coderslab.app.diaper;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.app.baby.Baby;
 
@@ -16,6 +17,7 @@ public class Diaper {
     //    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime beginning;
+    @NotEmpty
     private String[] content;
 
     @NotNull(message = "May not be null. Add Baby first")

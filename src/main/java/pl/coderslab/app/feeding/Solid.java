@@ -1,6 +1,7 @@
 package pl.coderslab.app.feeding;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Entity
 public class Solid extends Feeding {
-
+    @NotEmpty
     private String[] foods;
 
     @PrePersist

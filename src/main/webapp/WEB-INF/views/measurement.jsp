@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<%@include file="header.jspf" %>
+<%@include file="headerHome.jspf" %>
 
 <div class="container">
 

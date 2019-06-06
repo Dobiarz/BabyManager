@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<%@include file="header.jspf" %>
+<%@include file="headerBaby.jspf" %>
 
 <div class="container">
 
@@ -99,7 +99,7 @@
 </div>
 <script>
     function confirmDelete(id, name) {
-        if (confirm("Are you sure you want to delete a \"" + name + "\"?")) {
+        if (confirm("Are you sure you want to delete a \"" + name + "\" and all related records?")) {
             window.location.href = "delete/" + id;
         }
     }

@@ -2,6 +2,7 @@ package pl.coderslab.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.app.baby.Baby;
@@ -17,6 +18,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class HomeController {
@@ -39,6 +42,44 @@ public class HomeController {
     @Autowired
     DiaperService diaperService;
 
+    @ModelAttribute("feedings")
+    public List<Feeding> getFeedings() {
+        return feedingService.findAll();
+    }
+
+    @ModelAttribute("todayFeedings")
+    public List<Feeding> getTodayFeedings() {
+        return feedingService.findAll().stream()
+                .filter(f -> f.getBeginning().toLocalDate().equals(LocalDate.now()))
+                .sorted((o1, o2) -> o1.getBeginning().compareTo(o2.getBeginning()))
+                .collect(Collectors.toList());
+    }
+
+    @ModelAttribute("todayNaps")
+    public List<Nap> getTodayNaps() {
+        return napService.findAll().stream()
+                .filter(f -> f.getBeginning().toLocalDate().equals(LocalDate.now()))
+                .sorted((o1, o2) -> o1.getBeginning().compareTo(o2.getBeginning()))
+                .collect(Collectors.toList());
+    }
+
+    @ModelAttribute("todayDiapers")
+    public List<Diaper> getTodayDiapers() {
+        return diaperService.findAll().stream()
+                .filter(f -> f.getBeginning().toLocalDate().equals(LocalDate.now()))
+                .sorted((o1, o2) -> o1.getBeginning().compareTo(o2.getBeginning()))
+                .collect(Collectors.toList());
+    }
+
+    @RequestMapping("/home")
+    public String home() {
+        return "home";
+    }
+
+//    @RequestMapping("/reports")
+//    public String reports() {
+//        return "reports";
+//    }
 
     @RequestMapping("/addTest")
     @ResponseBody
@@ -115,19 +156,7 @@ public class HomeController {
     public String uniquetest() {
         Baby uniquebaby = babyRepository.findFirstByName("Ada");
         boolean isNameAlreadyInUse = babyService.isNameAlreadyInUse("Ada");
-        return  "Znaleziono Baby:" + uniquebaby + "\n"
-                + "IsNamealreadyInUse: " + isNameAlreadyInUse ;
+        return "Znaleziono Baby:" + uniquebaby + "\n"
+                + "IsNamealreadyInUse: " + isNameAlreadyInUse;
     }
-
-
-
-    @RequestMapping("/home")
-    public String home() {
-        return "home";
-    }
-
-//    @RequestMapping("/reports")
-//    public String reports() {
-//        return "reports";
-//    }
 }

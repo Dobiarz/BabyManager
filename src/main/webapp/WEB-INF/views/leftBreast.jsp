@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<%@include file="header.jspf" %>
+<%@include file="headerHome.jspf" %>
 <%--<div class="form-group">--%>
 <%--<jsp:useBean id="now" class="java.util.Date" />--%>
 <%--<fmt:formatDate var="year" value="${now}" pattern="yyyy-MM-dd HH:mm:ss" />--%>

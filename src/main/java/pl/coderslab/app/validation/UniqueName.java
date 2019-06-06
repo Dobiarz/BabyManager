@@ -1,4 +1,4 @@
-package pl.coderslab.app.baby;
+package pl.coderslab.app.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

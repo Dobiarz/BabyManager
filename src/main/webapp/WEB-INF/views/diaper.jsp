@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<%@include file="header.jspf" %>
+<%@include file="headerHome.jspf" %>
 
 <div class="container">
 
@@ -39,7 +39,7 @@
             <table class="table table-hover">
                 <tr>
 
-                    <th>Baby Name</th>
+                    <th>Baby</th>
                     <th>Time</th>
                     <th>Content</th>
                     <th style="width: 15%">Actions</th>

@@ -2,6 +2,7 @@ package pl.coderslab.app.baby;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
+import pl.coderslab.app.validation.UniqueName;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

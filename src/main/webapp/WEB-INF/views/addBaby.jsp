@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<%@include file="header.jspf" %>
+<%@include file="headerHome.jspf" %>
 
 <form:form method="post" modelAttribute="baby">
 

@@ -1,7 +1,8 @@
-package pl.coderslab.app.baby;
+package pl.coderslab.app.validation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.coderslab.app.baby.BabyService;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

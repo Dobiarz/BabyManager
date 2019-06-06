@@ -20,6 +20,7 @@ public class Feeding {
     //    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 //    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Basic
     private LocalDateTime beginning;
 
     @NotNull(message = "May not be null. Add Baby first")
