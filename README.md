@@ -1,6 +1,7 @@
 ## BabyManager
 Web application that allows to record baby’s feedings, naps, diaper changes and growth.
-## Technologies:
+
+## Technologies
 *Spring Data, 
 *Hibernate, 
 *JSP, 
