@@ -67,10 +67,10 @@ public class AppConfig implements WebMvcConfigurer {
         return bean;
     }
 
-    @Bean(name="localeResolver")
+    @Bean(name = "localeResolver")
     public LocaleContextResolver getLocaleContextResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(new Locale("pl","PL"));
+        localeResolver.setDefaultLocale(new Locale("pl", "PL"));
         return localeResolver;
     }
 
@@ -78,7 +78,7 @@ public class AppConfig implements WebMvcConfigurer {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[] {"pl.coderslab"});
+        em.setPackagesToScan(new String[]{"pl.coderslab"});
         em.setJpaDialect(new HibernateJpaDialect());
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         em.setJpaProperties(additionalProperties());
@@ -87,12 +87,11 @@ public class AppConfig implements WebMvcConfigurer {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "drop-and-create");
+        properties.setProperty("hibernate.hbm2ddl.auto", "create");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
         properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.format_sql", "true");
-        //properties.setProperty("hibernate.hbm2ddl.import_files", "data.sql");
-        //properties.setProperty("hibernate.hbm2ddl.import_files_sql_extractor", "org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor");
         return properties;
     }
 
@@ -117,6 +116,7 @@ public class AppConfig implements WebMvcConfigurer {
         dataSource.setPassword("coderslab");
         return dataSource;
     }
+
     @Bean
     public Validator validator() {
         return new LocalValidatorFactoryBean();

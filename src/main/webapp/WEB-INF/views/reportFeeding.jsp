@@ -39,12 +39,7 @@
                 <a class="nav-link" href="/reports/diaper">Diaper</a>
             </li>
         </ul>
-        <%--<div class="card-body">--%>
-        <%--<a href="/reports/feeding" class="btn btn-primary">Feeding</a>--%>
-        <%--<a href="#" class="btn btn-primary">Nap</a>--%>
-        <%--<a href="#" class="btn btn-primary">Diaper</a>--%>
-        <%--<a href="#" class="btn btn-primary">Measurement</a>--%>
-        <%--</div>--%>
+
         <form method="post">
 
                 <div class="card-body">
@@ -53,8 +48,7 @@
                         Choose Baby:
                         </div>
                         <div class="form-group col-md-4">
-                            <%--<label for="babyId">Baby:</label>--%>
-                                <select name="baby" class="form-control">
+                                <select name="baby" class="form-control" >
                                 <c:forEach items="${babies}" var="baby">
                                     <option value="${baby.name}">${baby.name}</option>
                                 </c:forEach>
@@ -71,10 +65,6 @@
             <canvas id="myChart"></canvas>
         </div>
     </div>
-
-    <%--<div class="card mt-4">--%>
-
-    <%--</div>--%>
 
 </div>
 
@@ -102,8 +92,17 @@
         },
 
         // Configuration options go here
-        options: {}
+        options: { scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }}
     });
+
+
+
 </script>
 
 </body>

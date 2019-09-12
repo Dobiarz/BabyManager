@@ -12,8 +12,6 @@
 
 <html>
 <head>
-    <%--<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">--%>
-    <%--<link rel="stylesheet" href="webjars/font-awesome/4.7.0/css/font-awesome.min.css">--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -69,9 +67,6 @@
                                     -
                                 </c:otherwise>
                             </c:choose>
-                                <%--<c:if test="${feeding['class'].simpleName == 'LeftBreast' || feeding['class'].simpleName == 'RihgtBreast'}">--%>
-                                <%--${feeding.end.toLocalDate()} ${feeding.end.toLocalTime()}--%>
-                                <%--</c:if>--%>
                         </td>
                         <td>
 
@@ -85,9 +80,6 @@
                                 </c:otherwise>
                             </c:choose>
 
-                                <%--<c:if test="${feeding['class'].simpleName == 'Bottle'}">--%>
-                                <%--${feeding.milkType}--%>
-                                <%--</c:if>--%>
                         </td>
                         <td>
 
@@ -101,9 +93,6 @@
                                 </c:otherwise>
                             </c:choose>
 
-                                <%--<c:if test="${feeding['class'].simpleName == 'Solid'}">--%>
-                                <%--${fn:join(feeding.foods,', ')}--%>
-                                <%--</c:if>--%>
                         </td>
                         <td>
                             <c:choose>
@@ -117,10 +106,6 @@
                             </c:choose>
 
 
-                                <%--</c:choose>--%>
-                                <%--<c:if test="${feeding['class'].simpleName == 'Bottle' || feeding['class'].simpleName == 'Pump'}">--%>
-                                <%--${feeding.volume}--%>
-                                <%--</c:if>--%>
                         </td>
                         <td>
 
@@ -134,9 +119,6 @@
                                 </c:otherwise>
                             </c:choose>
 
-                                <%--<c:if test="${feeding['class'].simpleName == 'Pump'}">--%>
-                                <%--${feeding.breast}--%>
-                                <%--</c:if>--%>
                         </td>
                         <td>
                             <a href="/feeding/${feeding['class'].simpleName}/update/${feeding.id}"

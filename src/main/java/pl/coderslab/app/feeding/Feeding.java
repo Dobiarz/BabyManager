@@ -17,8 +17,6 @@ public class Feeding {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-//    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Basic
     private LocalDateTime beginning;
@@ -27,33 +25,8 @@ public class Feeding {
     @ManyToOne
     private Baby baby;
 
-//    @Column(name="DTYPE", insertable = false, updatable = false)
-//    private String DTYPE;
-//
-//    public String getDTYPE() {
-//        return DTYPE;
-//    }
-
-//    @Column(name="milkType", insertable = false, updatable = false)
-//    private String milkType;
-//
-//    public String getMilkType() {
-//        return milkType;
-//    }
-
-//    @Transient
-//    public String getDecriminatorValue() {
-//        return this.getClass().getAnnotation(DiscriminatorValue.class).value();
-//    }
-
-
     public Feeding() {
     }
-
-//    public Feeding(LocalDateTime startTime, Baby baby) {
-//        this.beginning = startTime;
-//        this.baby = baby;
-//    }
 
     public Long getId() {
         return id;

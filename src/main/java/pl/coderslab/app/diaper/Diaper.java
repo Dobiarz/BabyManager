@@ -13,10 +13,10 @@ public class Diaper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    //    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm:ss")
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime beginning;
+
     @NotEmpty
     private String[] content;
 
@@ -25,7 +25,6 @@ public class Diaper {
     private Baby baby;
 
     @PrePersist
-//    @PreUpdate
     public void prePersist() {
         beginning = LocalDateTime.now();
     }

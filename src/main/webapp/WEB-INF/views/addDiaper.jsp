@@ -12,11 +12,9 @@
 
 <html>
 <head>
-    <%--<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">--%>
-    <%--<link rel="stylesheet" href="webjars/font-awesome/4.7.0/css/font-awesome.css">--%>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BabyManager</title>
 
 </head>
@@ -43,8 +41,9 @@
                         <form:errors path="baby" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="contentId" >Content:</label>
-                        <form:select items="${content}" path="content" class="form-control" id="contentId" multiple="true"/>
+                        <label for="contentId">Content:</label>
+                        <form:select items="${content}" path="content" class="form-control" id="contentId"
+                                     multiple="true"/>
                         <form:errors path="content" element="div" cssClass="text-danger"/>
                     </div>
                 </div>

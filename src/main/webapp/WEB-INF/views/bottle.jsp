@@ -43,11 +43,11 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="volumeId">Volume(ml):</label>
-                        <form:input type="number" min="0" step="5" path="volume" class="form-control" id="volumeId" />
+                        <form:input type="number" min="0" step="5" path="volume" class="form-control" id="volumeId"/>
                         <form:errors path="volume" element="div" cssClass="text-danger"/>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="milkTypeId" >Milk Type:</label>
+                        <label for="milkTypeId">Milk Type:</label>
                         <form:select items="${milkTypes}" path="milkType" class="form-control" id="milkTypeId"/>
                         <form:errors path="milkType" element="div" cssClass="text-danger"/>
                     </div>

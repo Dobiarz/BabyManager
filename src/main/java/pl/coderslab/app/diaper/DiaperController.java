@@ -26,7 +26,9 @@ public class DiaperController {
     BabyService babyService;
 
     @ModelAttribute("diapers")
-    public List<Diaper> getDiapers(){return diaperService.findAll();}
+    public List<Diaper> getDiapers() {
+        return diaperService.findAll();
+    }
 
     @ModelAttribute("content")
     public List<String> getContent() {

@@ -63,7 +63,6 @@ public class ReportsController {
         return intList;
     }
 
-    //    @ModelAttribute("numberOfFeedingsLastWeek")
     public List<Integer> getNumberOfFeedingsLastWeekByBaby(String name) {
         List<Integer> numberOfFeedingsLastWeek = new ArrayList<>();
         for (int i = 6; i >= 0; i--) {
@@ -76,6 +75,7 @@ public class ReportsController {
         }
         return numberOfFeedingsLastWeek;
     }
+
     public List<Integer> getNumberOfNapsLastWeekByBaby(String name) {
         List<Integer> numberOfNapsLastWeek = new ArrayList<>();
         for (int i = 6; i >= 0; i--) {
@@ -88,6 +88,7 @@ public class ReportsController {
         }
         return numberOfNapsLastWeek;
     }
+
     public List<Integer> getNumberOfDiapersLastWeekByBaby(String name) {
         List<Integer> numberOfdiapersLastWeek = new ArrayList<>();
         for (int i = 6; i >= 0; i--) {

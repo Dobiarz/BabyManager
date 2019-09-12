@@ -6,14 +6,15 @@ import pl.coderslab.app.baby.Baby;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+
 @Entity
-@Table(name="Measurements")
+@Table(name = "Measurements")
 public class Measurement {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime beginning;
 
@@ -25,9 +26,7 @@ public class Measurement {
     private int height;
     private int headCircumference;
 
-
     @PrePersist
-//    @PreUpdate
     public void prePersist() {
         beginning = LocalDateTime.now();
     }

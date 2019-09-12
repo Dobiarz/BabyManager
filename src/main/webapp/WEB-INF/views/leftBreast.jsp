@@ -22,36 +22,6 @@
 <body>
 
 <%@include file="headerHome.jspf" %>
-<%--<div class="form-group">--%>
-<%--<jsp:useBean id="now" class="java.util.Date" />--%>
-<%--<fmt:formatDate var="year" value="${now}" pattern="yyyy-MM-dd HH:mm:ss" />--%>
-<%--${year}--%>
-<%--</div>--%>
-
-<%--<div class="form-group">--%>
-<%--<form:form method="post" modelAttribute="leftBreast">--%>
-<%--<jsp:useBean id="now" class="java.util.Date"/>--%>
-<%--<fmt:formatDate var="year" value="${now}" pattern="yyyy-MM-dd HH:mm:ss"/>--%>
-<%--<form:hidden path="beginning" value="${year}"/>--%>
-<%--<form:errors path="beginning" element="div" cssClass="error"/>--%>
-<%--<input type="submit" value="send">--%>
-<%--</form:form>--%>
-<%--</div>--%>
-
-<%--<button onclick="myFunction()">Start</button>--%>
-<%--<p id="demo"></p>--%>
-
-<%--<div class="form-group">--%>
-
-<%--<form:form method="post" modelAttribute="leftBreast">--%>
-
-<%--<label for="beginningId">Beginning:</label>--%>
-<%--<form:input path="beginning" class="form-control" id="beginningId" value="cos"/>--%>
-<%--<form:errors path="beginning" element="div" cssClass="error"/>--%>
-<%--<input type="submit" class="btn btn-primary" value="Start">--%>
-
-<%--</form:form>--%>
-<%--</div>--%>
 
 <form:form method="post" modelAttribute="leftBreast">
 
@@ -87,14 +57,6 @@
 
                     </div>
 
-                        <%--<div class="form-group col-md-4">--%>
-                        <%--<label for="beginningId">Beginning:</label>--%>
-
-                        <%--<form:input type="datetime-local" path="beginning" class="form-control" id="beginningId"--%>
-                        <%--placeholder="yyyy-MM-dd HH:mm:ss"/>--%>
-                        <%--<form:errors path="beginning" element="div" cssClass="error"/>--%>
-                        <%--</div>--%>
-
                     <div class="form-group col-md-4">
 
                         <label for="endId">End:</label>
@@ -102,47 +64,9 @@
                         <form:errors path="end" element="div" cssClass="text-danger"/>
                         <button type="button" onclick="setEndTime()" class="btn btn-primary">End</button>
 
-                        <%--<label for="endId">End:</label>--%>
-                        <%--<form:input path="end" class="form-control" id="endId" placeholder="yyyy-MM-dd HH:mm:ss"/>--%>
-                        <%--<form:errors path="end" element="div" cssClass="error"/>--%>
                     </div>
 
-
-                        <%--<div class="form-group col-md-4">--%>
-                        <%--<label for="ratingId">Rating:</label>--%>
-                        <%--<form:input type="number" path="rating" min="1" max="10" class="form-control" id="ratingId"/>--%>
-                        <%--<form:errors path="rating" element="div" cssClass="error"/>--%>
-                        <%--</div>--%>
-
-                        <%--<div class="form-group col-md-4">--%>
-                        <%--<label for="pagesId">Pages:</label>--%>
-                        <%--<form:input type="number" path="pages" class="form-control" id="pagesId"/>--%>
-                        <%--<form:errors path="pages" element="div" cssClass="error"/>--%>
-                        <%--</div>--%>
-
                 </div>
-
-                    <%--<div class="form-group">--%>
-                    <%--<label for="publisherId">Publisher:</label>--%>
-                    <%--<form:select path="publisher.id" items="${publishers}" itemLabel="name" itemValue="id"--%>
-                    <%--class="form-control" id="publisherId"/>--%>
-                    <%--<form:errors path="publisher.id" element="div" cssClass="error"/>--%>
-                    <%--</div>--%>
-
-                    <%--<div class="form-group">--%>
-                    <%--<label for="authorsId">Authors:</label>--%>
-                    <%--<form:select path="authors" items="${authors}" itemLabel="fullName" itemValue="id"--%>
-                    <%--class="form-control" id="authorsId"/>--%>
-                    <%--<form:errors path="authors" element="div" cssClass="error"/>--%>
-                    <%--</div>--%>
-
-                    <%--<div class="row">--%>
-                    <%--<div class="form-group col-md-12">--%>
-                    <%--<label for="descriptionId">Description:</label>--%>
-                    <%--<form:textarea path="description" cols="60" rows="3" class="form-control" id="descriptionId"/>--%>
-                    <%--<form:errors path="description" element="div" cssClass="error"/>--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
 
                 <input type="submit" class="btn btn-primary" value="Save">
 
@@ -157,36 +81,33 @@
 <script>
     function getCurrentTime() {
         var currentTime = new Date();
-        // currentTime.setHours(currentTime.getHours() + 2);
-        // ISO Format
-        // 2019-05-25T12:02:10.81
-        // "dd.MM.yyyy HH:mm:ss"
-        if(currentTime.getMonth() < 10){
+
+        if (currentTime.getMonth() < 10) {
             var month = currentTime.getMonth() + 1;
             month = "0" + month;
-        }else {
+        } else {
             month = currentTime.getMonth() + 1
         }
 
-        if(currentTime.getDate() < 10){
+        if (currentTime.getDate() < 10) {
             var dayOfMonth = "0" + currentTime.getDate();
-        }else {
+        } else {
             dayOfMonth = currentTime.getDate();
         }
 
-        if(currentTime.getHours() < 10){
+        if (currentTime.getHours() < 10) {
             var hour = "0" + currentTime.getHours();
-        }else {
+        } else {
             hour = currentTime.getHours();
         }
-        if(currentTime.getMinutes() < 10){
+        if (currentTime.getMinutes() < 10) {
             var minute = "0" + currentTime.getMinutes();
-        }else {
+        } else {
             minute = currentTime.getMinutes();
         }
-        if(currentTime.getSeconds() < 10){
+        if (currentTime.getSeconds() < 10) {
             var second = "0" + currentTime.getSeconds();
-        }else {
+        } else {
             second = currentTime.getSeconds();
         }
         var currentTimeString =
@@ -197,19 +118,14 @@
             + minute + ":"
             + second;
 
-        //     date.getFullYear() + "-"
-        //     + date.getMonth() + "-"
-        //     + date.getDate() + " "
-        //     + date.getHours() + ":"
-        //     + date.getMinutes() + ":"
-        //     + date.getSeconds();
         return currentTimeString;
     }
 
-    function setBeginningTime(){
+    function setBeginningTime() {
         document.getElementById("beginningId").value = getCurrentTime()
     }
-    function setEndTime(){
+
+    function setEndTime() {
         document.getElementById("endId").value = getCurrentTime()
     }
 </script>

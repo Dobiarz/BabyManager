@@ -15,7 +15,6 @@ public class Solid extends Feeding {
     private String[] foods;
 
     @PrePersist
-//    @PreUpdate
     public void prePersist() {
         super.setBeginning(LocalDateTime.now());
     }

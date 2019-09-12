@@ -13,7 +13,6 @@ public class Pump extends Feeding {
     private String breast;
 
     @PrePersist
-//    @PreUpdate
     public void prePersist() {
         super.setBeginning(LocalDateTime.now());
     }

@@ -20,18 +20,13 @@ public class Nap {
     @ManyToOne
     private Baby baby;
 
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @NotNull
     private LocalDateTime beginning;
-    
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime end;
 
-//    @PrePersist
-//    public void prePersist() {
-//        beginning = LocalDateTime.now();
-//    }
 
     public LocalDateTime getEnd() {
         return end;

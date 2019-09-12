@@ -22,7 +22,9 @@ public class MeasurementController {
     BabyService babyService;
 
     @ModelAttribute("measurements")
-    public List<Measurement> getMeasurements(){return measurementService.findAll();}
+    public List<Measurement> getMeasurements() {
+        return measurementService.findAll();
+    }
 
     @ModelAttribute("babies")
     public List<Baby> getBabies() {

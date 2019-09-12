@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Service
 @Transactional
 public class MeasurementService {
@@ -15,7 +16,9 @@ public class MeasurementService {
         measurementRepository.save(measurement);
     }
 
-    public Measurement read(Long id) { return measurementRepository.findById(id).orElse(null); }
+    public Measurement read(Long id) {
+        return measurementRepository.findById(id).orElse(null);
+    }
 
     public void update(Measurement measurement) {
         measurementRepository.save(measurement);
@@ -29,7 +32,7 @@ public class MeasurementService {
         return measurementRepository.findAll();
     }
 
-    public  Measurement findFirstByBabyIdOrderByBeginningDesc(Long id){
-        return  measurementRepository.findFirstByBabyIdOrderByBeginningDescQuery(id);
-    };
+    public Measurement findFirstByBabyIdOrderByBeginningDesc(Long id) {
+        return measurementRepository.findFirstByBabyIdOrderByBeginningDescQuery(id);
+    }
 }

@@ -12,25 +12,9 @@
 
 <html>
 <head>
-    <%--<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0/css/bootstrap.min.css">--%>
-    <%--<link rel="stylesheet" href="webjars/font-awesome/4.7.0/css/font-awesome.css">--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-    <%--<script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>--%>
-    <%--<script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>--%>
-    <%--<link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">--%>
-    <%--<link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">--%>
-
-    <%--<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"--%>
-    <%--rel="stylesheet">--%>
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
-    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">--%>
-    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>--%>
-    <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>--%>
-
 
     <title>BabyManager</title>
 </head>
@@ -137,7 +121,7 @@
                         <td>
                             <a href="/feeding/${feeding['class'].simpleName}/update/${feeding.id}"
                                class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                            <a href="#" onclick="confirmDelete(${feeding.id}, '${feeding['class'].simpleName}')"
+                            <a href="#" onclick="confirmDelete(${feeding.id}, 'feeding')"
                                class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
                         </td>
                     </tr>
@@ -202,7 +186,7 @@
 <script>
     function confirmDelete(id, type) {
         if (confirm("Are you sure you want to delete a \"" + type + "\"?")) {
-            window.location.href = "delete/" + id;
+            window.location.href = type.toLowerCase() + "/delete/" + id;
         }
     }
 </script>
