@@ -111,9 +111,9 @@ public class AppConfig implements WebMvcConfigurer {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/BabyManager?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
-        dataSource.setUsername("root");
-        dataSource.setPassword("coderslab");
+        dataSource.setUrl("jdbc:mysql://babymanager.cpcxxr7macta.eu-central-1.rds.amazonaws.com");
+        dataSource.setUsername("Dobiarz");
+        dataSource.setPassword("Q23werty");
         return dataSource;
     }
 
