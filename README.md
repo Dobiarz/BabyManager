@@ -1,6 +1,6 @@
 ## BabyManager
 Web application that allows to record baby’s feedings, naps, diaper changes and growth.
-
+The application was deployed in AWS:
 http://babymanager-env.sjwux4bm8p.eu-central-1.elasticbeanstalk.com/home
 
 ## Technologies
