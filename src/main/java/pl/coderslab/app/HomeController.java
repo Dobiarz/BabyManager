@@ -71,7 +71,7 @@ public class HomeController {
                 .collect(Collectors.toList());
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("/")
     public String home() {
         return "home";
     }

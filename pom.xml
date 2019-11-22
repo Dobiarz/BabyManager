@@ -35,7 +35,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>springmvc</finalName>
+        <finalName>BabyManager</finalName>
     </build>
 
     <dependencies>
@@ -57,19 +57,6 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring-framework.version}</version>
         </dependency>
-        <!-- Servlet API -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-        </dependency>
-        <!-- JSTL -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>${jstl.version}</version>
-        </dependency>
-
         <!-- JPA and Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
