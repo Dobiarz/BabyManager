@@ -7,10 +7,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link " href="/home">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link " href="/">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link " href="/reports/feeding">Reports </a>
             <a class="nav-item nav-link active" href="/baby/list">Babies</a>
         </div>
     </div>
 </nav>
 
+<%@include file="JQ_PoperJS.jspf" %>
